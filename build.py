@@ -2,7 +2,14 @@ import os
 import sys
 import shutil
 import subprocess
+import argparse
 
+
+def parse_args():
+    parser = argparse.ArgumentParser(description='Convert your python application')
+    parser.add_argument('filename', help='select filename you want to compile: ')
+    global args
+    args = parser.parse_args()
 
 def cmd_launch(cmd):
     """A clean way to launch commands."""
@@ -13,7 +20,10 @@ def cmd_launch(cmd):
 
 
 # launch the builds
-dir_src = ["SOME_FILE.py"] #add your file
+parse_args()
+python_file = args.filename
+#adds your file
+dir_src = [python_file]
 dir_test = "test"
 dir_build = "build"
 shutil.rmtree(dir_build, ignore_errors=True)
