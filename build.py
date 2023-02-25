@@ -13,9 +13,7 @@ def cmd_launch(cmd):
 
 
 # launch the builds
-dir_src = ["detr.py",
-           "transpon.py",
-           "calc_matrix_hotfix+new.py"]
+dir_src = ["SOME_FILE.py"] #add your file
 dir_test = "test"
 dir_build = "build"
 shutil.rmtree(dir_build, ignore_errors=True)
